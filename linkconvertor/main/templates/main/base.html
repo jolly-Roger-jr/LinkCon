@@ -42,7 +42,7 @@
                     <a class="nav-link {% if url_list == request.path %}active{% endif %}" href = "{{url_list}}">List</a></li> <!--текст и адрес ссылок хедера-->
 
                 <li class="nav-item">
-                        {% url 'logout_page' as url_logout_page %}
+                    {% url 'logout_page' as url_logout_page %}
                     <a class="btn btn-danger ml-5" href ="{{url_logout_page}}">Выйти</a></li>
 
                 {% else %}
@@ -53,7 +53,7 @@
 
                     <li class="nav-item">
                         {% url 'login_page' as url_login_page %}
-                    <a class="nav-link {% if url_login_page == request.path %}active{% endif %}" href ="{{url_login_page}}">Войти</a></li>
+                        <a class="nav-link {% if url_login_page == request.path %}active{% endif %}" href ="{{url_login_page}}">Войти</a></li>
 
                 {% endif %}
 

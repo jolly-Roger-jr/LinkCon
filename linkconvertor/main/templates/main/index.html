@@ -8,7 +8,7 @@ Convert Link
 {% block other %}
     {% if request.user.is_authenticated %}
         <div class="text-center">
-            <h1>Это наш самый замечательный из сервисов, по сокращению ссылок</h1>
+            <h3>Это наш самый замечательный из сервисов, по сокращению ссылок</h3>
                 <div class="alert ss-warning mt-2">
                     <h3>Convert Link</h3>
                     <div>
@@ -18,8 +18,8 @@ Convert Link
                 </div>
             <div id="form-errors-container" class="alert alert-danger mt-3"></div>
 
-            <p> Вы спросите, зачем вам это нужно?</p>
-            <h2>Мы ответим - В ДУШЕ НЕ ЕБЁМ!</h2>
+            <p>Link shortening</p>
+            <h2>by one click</h2>
         </div>
     <!--toast-->
         <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
@@ -37,7 +37,7 @@ Convert Link
         </div>
     <script src="static/js/ajax_request.js"></script>
     {% else %}
-    <h1 class="alert ss-warning mt-2 text-center">Это наш самый замечательный из сервисов, по сокращению ссылок</h1>
+    <h3 class="alert ss-warning mt-2 text-center">Это наш самый замечательный из сервисов, по сокращению ссылок</h3>
     <h4 class="alert ss-warning mt-2 text-center">Пожалуйста зарегестрируйтесь или авторизуйтесь для доступа к функционалу</h4>
 {% endif %}
 {% endblock %}

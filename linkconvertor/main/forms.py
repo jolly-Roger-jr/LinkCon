@@ -11,7 +11,7 @@ class LinkForm(ModelForm):
         widgets = {
             "original_url": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Вводи свою ссаную ссылку',
+                'placeholder': 'Введите ссылку',
                 'id': 'original_url_input'
             }),
         }
