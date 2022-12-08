@@ -6,17 +6,17 @@
 
 {% block other %}
     <p><a href ='/'>Вернуться назад</a></p>
-    <h2 class ="text-center" >Wellcome!</h2><br>
+    <h1 class ="text-center" >Wellcome!</h1><br>
     <div class="text-center alert ss-warning mt-2 mt-2">
         <h2>Регистрация</h2>
     </div>
-    <div class="alert ss-warning mt-2 col-3">
-        <form id="add form" method="post">
-            {% csrf_token %}
-            {{form}}
+        <div class="alert ss-warning mt-3 col-3">
+            <form id="add form" method="post">
+                {% csrf_token %}
+                {{form}}
             <button form="add form" type="submit" class="btn btn-primary mt-4">Добавить</button>
-        </form>
-    </div>
+            </form>
+        </div>
     <div class="text-center">
         <p>Link shortening</p>
         <h2>by one click</h2>
