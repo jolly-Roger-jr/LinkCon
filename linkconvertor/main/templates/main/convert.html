@@ -1,0 +1,6 @@
+<form method="post" id="linkForm">
+    {% csrf_token %}
+    {{ link.original_url }}<br>
+    <div id="shortLinkContainer"></div>
+    <div id="duplicateLinkNotice">This link already has a short link (see above)</div>
+</form>

@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block other %}
+    <h1>Это наш список оригиналов и обращенных ссылок</h1>
+    {% if links %}
+        {% for el in links %}
+             <div class="alert alert-warning mt-2">
+                 <p>{{ el.original_url }}</p> <h3>{{ host }}link/{{ el.shortlink_url }}/</h3>
+             </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert sss-warning mt-3">
+                 <h3>list is empty</h3>
+             </div>
+    {% endif %}
+    <p>Link shortening</p>
+    <h2>by one click</h2>
+{% endblock %}

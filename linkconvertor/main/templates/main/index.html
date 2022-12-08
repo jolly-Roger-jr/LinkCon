@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Convert Link
+{{ title }}
+{% endblock %}
+
+{% block other %}
+    {% if request.user.is_authenticated %}
+        <div class="text-center">
+            <h3>Это наш самый замечательный из сервисов, по сокращению ссылок</h3>
+                <div class="alert ss-warning mt-2">
+                    <h3>Convert Link</h3>
+                    <div>
+                        {% include 'main/convert.html' %}
+                    </div>
+                    <button class="btn btn-sm btn-success" id="ajax_request_btn">convert</button>
+                </div>
+            <div id="form-errors-container" class="alert alert-danger mt-3"></div>
+
+            <p>Link shortening</p>
+            <h2>by one click</h2>
+        </div>
+    <!--toast-->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="serverror">
+                    <div class="toast-header">
+                        <strong class="me-auto">System</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Закрыть"></button>
+                    </div>
+                    <div class="toast-body">
+                        Something went wrong.
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="static/js/ajax_request.js"></script>
+    {% else %}
+    <h3 class="alert ss-warning mt-2 text-center">Это наш самый замечательный из сервисов, по сокращению ссылок</h3>
+    <h4 class="alert ss-warning mt-2 text-center">Пожалуйста зарегестрируйтесь или авторизуйтесь для доступа к функционалу</h4>
+{% endif %}
+{% endblock %}
