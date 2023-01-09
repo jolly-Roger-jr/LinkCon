@@ -29,8 +29,9 @@ class RegisterUserForm(ModelForm):
     class Meta:
         model = User
         fields = ("username", "password")
-    def __init__(self,*agrs,**kwagrs):
-        super().__init__(*agrs,**kwagrs)
+
+    def __init__(self, *agrs, **kwagrs):
+        super().__init__(*agrs, **kwagrs)
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
 
