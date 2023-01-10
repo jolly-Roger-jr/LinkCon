@@ -1,4 +1,4 @@
-FROM python:3.8.9-alpine as base
+FROM python:3.8-slim as base
 
 # Setup env
 ENV LANG C.UTF-8
@@ -34,5 +34,4 @@ USER appuser
 COPY . .
 
 # Run the application
-ENTRYPOINT ["python", "-m", "http.server"]
-CMD ["--directory", "directory", "8080"]
+CMD ["./manage.py", "runserver", "0.0.0.0:8080"]
