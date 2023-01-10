@@ -12,7 +12,7 @@ RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --deploy
 
 COPY . .
 
-EXPOSE 2000
+EXPOSE 8080
 
 #RUN python manage.py migrate
 CMD ["python", "manage.py", "migrate"]
