@@ -35,4 +35,4 @@ COPY . .
 
 # Run the application
 ENTRYPOINT ["python", "-m", "http.server"]
-CMD ["--directory", "directory", "8000"]
+CMD ["--directory", "directory", "8080"]
