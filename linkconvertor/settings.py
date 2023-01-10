@@ -26,9 +26,11 @@ SECRET_KEY = 'django-insecure-0*uspt+!5-p_&x7e7m9dg*dc)gvbci%1e)n%$(&k^l!l1m&ulx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0',
-                 '127.0.0.1',
-                 ]
+ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
+    'linkcon-zt3i6agnha-ew.a.run.app',
+]
 
 # Application definition
 
