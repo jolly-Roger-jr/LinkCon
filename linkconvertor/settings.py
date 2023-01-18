@@ -21,7 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-0*uspt+!5-p_&x7e7m9dg*dc)gvbci%1e)n%$(&k^l!l1m&ulx'
+from decouple import config
+
+SECRET_KEY = config("SECRET_KEY") # this is to replace the secret key you cut away before
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -30,7 +32,10 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     '127.0.0.1',
     'linkcon-zt3i6agnha-ew.a.run.app',
+
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Application definition
 
@@ -43,7 +48,9 @@ INSTALLED_APPS = [
     # 'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main'
+    'main',
+    'authenticate',
+
 ]
 
 MIDDLEWARE = [
@@ -62,7 +69,7 @@ ROOT_URLCONF = 'linkconvertor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'main/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

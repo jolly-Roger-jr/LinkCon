@@ -1,13 +1,12 @@
 import hashlib
 import json
-from.views import HOST
+from .views import HOST
 from .models import Link
-from django.http import HttpResponseBadRequest, HttpResponse, HttpResponseServerError
+from django.http import HttpResponseBadRequest, HttpResponse
 import validators
 
 
 def convert(request):
-
     if request.method != 'POST':
         return HttpResponseBadRequest()
 
@@ -24,7 +23,7 @@ def convert(request):
         absolute_url = str(HOST + 'link/' + shortlink_url + '/')
         result, created = Link.objects.get_or_create(
             original_url=url,
-            shortlink_url=shortlink_url,)
+            shortlink_url=shortlink_url, )
         if not created:
             duplicate = 'already exists'
     else:

@@ -41,11 +41,9 @@
                     {% url 'list' as url_list %}
                     <a class="nav-link {% if url_list == request.path %}active{% endif %}" href = "{{url_list}}">List</a></li> <!--текст и адрес ссылок хедера-->
 
-                <h3 class ="nav-link fw-bold py-2 px-2" href="{% url 'home' %}">|  {{ request.user }}</h3>
-
                 <li class="nav-item">
                     {% url 'logout_page' as url_logout_page %}
-                    <a class="btn btn-danger ml-5" href ="{{url_logout_page}}">Выйти</a></li>
+                    <a class="btn btn-danger ml-5" href ="{{url_logout_page}}">Выйти из учетной записи {{request.user}}</a></li>
 
                 {% else %}
 

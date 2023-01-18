@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Link(models.Model):
     objects = None
     original_url = models.CharField('Исходная ссылка', max_length=1000)

@@ -4,6 +4,7 @@ from .models import Link
 from django.forms import ModelForm, TextInput
 from django.contrib.auth.forms import AuthenticationForm
 
+
 class LinkForm(ModelForm):
     class Meta:
         model = Link
@@ -19,6 +20,7 @@ class LinkForm(ModelForm):
     def copy(self):
         pass
 
+
 class AuthUserForm(AuthenticationForm, ModelForm):
     class Meta:
         model = User
@@ -30,8 +32,8 @@ class RegisterUserForm(ModelForm):
         model = User
         fields = ("username", "password")
 
-    def __init__(self, *agrs, **kwagrs):
-        super().__init__(*agrs, **kwagrs)
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         for field in self.fields:
             self.fields[field].widget.attrs['class'] = 'form-control'
 
